@@ -5,9 +5,10 @@ CFLAGS := -Wall -Wextra -Werror -Wshadow -std=c++17 -fsanitize=address
 IFLAGS := -Iinclude
 
 # Executable setup
-NAME := program
+NAME := convert
 SRC_FILES := \
-	$(SRC_DIR)/main.cpp
+	$(SRC_DIR)/main.cpp \
+	$(SRC_DIR)/Span.cpp
 
 OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
