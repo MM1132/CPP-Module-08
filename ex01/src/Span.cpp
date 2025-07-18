@@ -30,6 +30,18 @@ void Span::addNumber(int number)
 	this->m_vec.push_back(number);
 }
 
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	for (auto& it = begin; it != end; ++it)
+	{
+		if (this->m_vec.size() >= this->m_N)
+		{
+			throw std::length_error("Cannot add more elements to the Span");
+		}
+		this->m_vec.push_back(*it);
+	}
+}
+
 int Span::shortestSpan()
 {
 	if (this->m_vec.size() <= 1)

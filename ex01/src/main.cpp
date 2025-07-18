@@ -19,5 +19,11 @@ int main()
 	std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
 	std::cout << "Longest span: " << sp.longestSpan() << std::endl;
 
+	Span addRange = Span(5);
+	std::vector<int> numbers = { 3, 5, 7, 13, 17 };
+	addRange.addNumbers(numbers.begin(), numbers.end());
+	std::cout << "Shortest span after adding range: " << addRange.shortestSpan() << std::endl;
+	std::cout << "Longest span after adding range: " << addRange.longestSpan() << std::endl;
+
 	return 0;
 }
