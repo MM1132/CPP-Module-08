@@ -1,26 +1,30 @@
-#include "Span.hpp"
+#include "MutantStack.hpp"
 #include <iostream>
+#include <stack>
 
 int main()
 {
-	Span sp = Span(8);
-	// sp.addNumber(2);
-	// sp.addNumber(5);
-	// sp.addNumber(10);
-	// sp.addNumber(12);
-	// sp.addNumber(13);
-	// sp.addNumber(20);
-
-	sp.addNumber(20);
-	sp.addNumber(13);
-	sp.addNumber(5);
-	sp.addNumber(12);
-	sp.addNumber(2);
-	sp.addNumber(10);
-
-	std::cout << "The tests are starting..." << std::endl;
-	std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
-	std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+	std::cout << *it << std::endl;
+	++it;
+	}
+	std::stack<int> s(mstack);
 
 	return 0;
 }

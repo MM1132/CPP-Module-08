@@ -7,8 +7,7 @@ IFLAGS := -Iinclude
 # Executable setup
 NAME := program
 SRC_FILES := \
-	$(SRC_DIR)/main.cpp \
-	$(SRC_DIR)/Span.cpp
+	$(SRC_DIR)/main.cpp
 
 OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
